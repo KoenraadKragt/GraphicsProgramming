@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Effects11", "Effects11\Effects11_2013.vcxproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Box", "Chapter 6 Drawing in Direct3D\Box\Box.vcxproj", "{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,15 @@ Global
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|Win32.Build.0 = Release|Win32
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.ActiveCfg = Release|x64
 		{DF460EAB-570D-4B50-9089-2E2FC801BF38}.Release|x64.Build.0 = Release|x64
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Debug|Win32.Build.0 = Debug|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Debug|x64.ActiveCfg = Debug|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Profile|Win32.ActiveCfg = Release|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Profile|Win32.Build.0 = Release|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Profile|x64.ActiveCfg = Release|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Release|Win32.ActiveCfg = Release|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Release|Win32.Build.0 = Release|Win32
+		{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
