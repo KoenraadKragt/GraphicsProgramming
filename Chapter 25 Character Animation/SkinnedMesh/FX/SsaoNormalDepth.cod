@@ -104,7 +104,7 @@ fxgroup
                 //   o1.x <- <VS return value>.PosV.x; o1.y <- <VS return value>.PosV.y; o1.z <- <VS return value>.PosV.z; 
                 //   o0.x <- <VS return value>.PosH.x; o0.y <- <VS return value>.PosH.y; o0.z <- <VS return value>.PosH.z; o0.w <- <VS return value>.PosH.w
                 //
-                #line 60 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 60 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 mov r0.xyz, v0.xyzx
                 mov r0.w, l(1.000000)
                 dp4 r1.x, r0.xyzw, cb0[0].xyzw  // r1.x <- vout.PosV.x
@@ -170,7 +170,7 @@ fxgroup
                 //   v3.x <- pin.Tex.x; v3.y <- pin.Tex.y; 
                 //   o0.x <- <PS return value>.x; o0.y <- <PS return value>.y; o0.z <- <PS return value>.z; o0.w <- <PS return value>.w
                 //
-                #line 109 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 109 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 dp3 r0.x, v2.xyzx, v2.xyzx
                 rsq r0.x, r0.x
                 mul r0.xyz, r0.xxxx, v2.xyzx  // r0.x <- pin.NormalV.x; r0.y <- pin.NormalV.y; r0.z <- pin.NormalV.z
@@ -255,7 +255,7 @@ fxgroup
                 //   o1.x <- <VS return value>.PosV.x; o1.y <- <VS return value>.PosV.y; o1.z <- <VS return value>.PosV.z; 
                 //   o0.x <- <VS return value>.PosH.x; o0.y <- <VS return value>.PosH.y; o0.z <- <VS return value>.PosH.z; o0.w <- <VS return value>.PosH.w
                 //
-                #line 60 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 60 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 mov r0.xyz, v0.xyzx
                 mov r0.w, l(1.000000)
                 dp4 r1.x, r0.xyzw, cb0[0].xyzw  // r1.x <- vout.PosV.x
@@ -332,7 +332,7 @@ fxgroup
                 //   v3.x <- pin.Tex.x; v3.y <- pin.Tex.y; 
                 //   o0.x <- <PS return value>.x; o0.y <- <PS return value>.y; o0.z <- <PS return value>.z; o0.w <- <PS return value>.w
                 //
-                #line 109 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 109 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 dp3 r0.x, v2.xyzx, v2.xyzx
                 rsq r0.x, r0.x
                 mul r0.xyz, r0.xxxx, v2.xyzx  // r0.x <- pin.NormalV.x; r0.y <- pin.NormalV.y; r0.z <- pin.NormalV.z
@@ -449,7 +449,7 @@ fxgroup
                 //   o0.x <- <SkinnedVS return value>.PosH.x; o0.y <- <SkinnedVS return value>.PosH.y; o0.z <- <SkinnedVS return value>.PosH.z; o0.w <- <SkinnedVS return value>.PosH.w; 
                 //   x0 <- weights
                 //
-                #line 78 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 78 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 mov x0[0].x, v4.x
                 mov x0[1].x, v4.y
                 mov x0[2].x, v4.z
@@ -564,7 +564,7 @@ fxgroup
                 //   v3.x <- pin.Tex.x; v3.y <- pin.Tex.y; 
                 //   o0.x <- <PS return value>.x; o0.y <- <PS return value>.y; o0.z <- <PS return value>.z; o0.w <- <PS return value>.w
                 //
-                #line 109 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 109 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 dp3 r0.x, v2.xyzx, v2.xyzx
                 rsq r0.x, r0.x
                 mul r0.xyz, r0.xxxx, v2.xyzx  // r0.x <- pin.NormalV.x; r0.y <- pin.NormalV.y; r0.z <- pin.NormalV.z
@@ -672,7 +672,7 @@ fxgroup
                 //   o0.x <- <SkinnedVS return value>.PosH.x; o0.y <- <SkinnedVS return value>.PosH.y; o0.z <- <SkinnedVS return value>.PosH.z; o0.w <- <SkinnedVS return value>.PosH.w; 
                 //   x0 <- weights
                 //
-                #line 78 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 78 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 mov x0[0].x, v4.x
                 mov x0[1].x, v4.y
                 mov x0[2].x, v4.z
@@ -798,7 +798,7 @@ fxgroup
                 //   v3.x <- pin.Tex.x; v3.y <- pin.Tex.y; 
                 //   o0.x <- <PS return value>.x; o0.y <- <PS return value>.y; o0.z <- <PS return value>.z; o0.w <- <PS return value>.w
                 //
-                #line 109 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
+                #line 109 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\SsaoNormalDepth.fx"
                 dp3 r0.x, v2.xyzx, v2.xyzx
                 rsq r0.x, r0.x
                 mul r0.xyz, r0.xxxx, v2.xyzx  // r0.x <- pin.NormalV.x; r0.y <- pin.NormalV.y; r0.z <- pin.NormalV.z
