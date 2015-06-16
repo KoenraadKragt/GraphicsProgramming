@@ -5,11 +5,13 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Effects11", "Effects11\Effects11_2013.vcxproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 6 Box", "Chapter 6 Drawing in Direct3D\Box\Box.vcxproj", "{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 06 Box", "Chapter 6 Drawing in Direct3D\Box\Box.vcxproj", "{E76DB861-9CF7-4CF2-A077-78AA9E5F5303}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 6 Shapes", "Chapter 6 Drawing in Direct3D\Shapes\Shapes.vcxproj", "{E981104E-9040-431C-823D-8E9EB680778D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 06 Shapes", "Chapter 6 Drawing in Direct3D\Shapes\Shapes.vcxproj", "{E981104E-9040-431C-823D-8E9EB680778D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 25 SkinnedMesh", "Chapter 25 Character Animation\SkinnedMesh\SkinnedMesh.vcxproj", "{93BE533A-C8AD-4CFD-9C1B-B8C7055503AB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 24 Quaternions", "Chapter 24 Quaternions\Quaternions\Quaternions.vcxproj", "{A04862C1-704C-45F9-8F58-2CAE74677C73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +62,15 @@ Global
 		{93BE533A-C8AD-4CFD-9C1B-B8C7055503AB}.Release|Win32.ActiveCfg = Release|Win32
 		{93BE533A-C8AD-4CFD-9C1B-B8C7055503AB}.Release|Win32.Build.0 = Release|Win32
 		{93BE533A-C8AD-4CFD-9C1B-B8C7055503AB}.Release|x64.ActiveCfg = Release|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Debug|Win32.Build.0 = Debug|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Debug|x64.ActiveCfg = Debug|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Profile|Win32.ActiveCfg = Release|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Profile|Win32.Build.0 = Release|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Profile|x64.ActiveCfg = Release|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Release|Win32.ActiveCfg = Release|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Release|Win32.Build.0 = Release|Win32
+		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
