@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 25 SkinnedMesh", "C
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 24 Quaternions", "Chapter 24 Quaternions\Quaternions\Quaternions.vcxproj", "{A04862C1-704C-45F9-8F58-2CAE74677C73}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 06 Skull", "Chapter 6 Drawing in Direct3D\Skull\Skull.vcxproj", "{CC5604E8-E75A-4BFF-8139-8F60C647E863}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -71,6 +73,15 @@ Global
 		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Release|Win32.ActiveCfg = Release|Win32
 		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Release|Win32.Build.0 = Release|Win32
 		{A04862C1-704C-45F9-8F58-2CAE74677C73}.Release|x64.ActiveCfg = Release|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Debug|Win32.Build.0 = Debug|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Debug|x64.ActiveCfg = Debug|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Profile|Win32.ActiveCfg = Release|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Profile|Win32.Build.0 = Release|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Profile|x64.ActiveCfg = Release|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Release|Win32.ActiveCfg = Release|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Release|Win32.Build.0 = Release|Win32
+		{CC5604E8-E75A-4BFF-8139-8F60C647E863}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
