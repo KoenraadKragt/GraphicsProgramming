@@ -116,7 +116,7 @@ fxgroup
                 //   o1.x <- <VS return value>.Tex.x; o1.y <- <VS return value>.Tex.y; 
                 //   o0.x <- <VS return value>.PosH.x; o0.y <- <VS return value>.PosH.y; o0.z <- <VS return value>.PosH.z; o0.w <- <VS return value>.PosH.w
                 //
-                #line 75 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 75 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov r0.xyz, v0.xyzx
                 mov r0.w, l(1.000000)
                 dp4 r1.x, r0.xyzw, cb0[12].xyzw  // r1.x <- vout.PosH.x
@@ -203,7 +203,7 @@ fxgroup
                 //   o1.x <- <VS return value>.Tex.x; o1.y <- <VS return value>.Tex.y; 
                 //   o0.x <- <VS return value>.PosH.x; o0.y <- <VS return value>.PosH.y; o0.z <- <VS return value>.PosH.z; o0.w <- <VS return value>.PosH.w
                 //
-                #line 75 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 75 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov r0.xyz, v0.xyzx
                 mov r0.w, l(1.000000)
                 dp4 r1.x, r0.xyzw, cb0[12].xyzw  // r1.x <- vout.PosH.x
@@ -259,7 +259,7 @@ fxgroup
                 //   v0.x <- pin.PosH.x; v0.y <- pin.PosH.y; v0.z <- pin.PosH.z; v0.w <- pin.PosH.w; 
                 //   v1.x <- pin.Tex.x; v1.y <- pin.Tex.y
                 //
-                #line 240 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 240 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 sample_indexable(texture2d)(float,float,float,float) r0.x, v1.xyxx, t0.wxyz, s0
                 mov r0.x, r0.x  // r0.x <- diffuse.w
                 
@@ -363,7 +363,7 @@ fxgroup
                 //   o0.x <- <SkinnedVS return value>.PosH.x; o0.y <- <SkinnedVS return value>.PosH.y; o0.z <- <SkinnedVS return value>.PosH.z; o0.w <- <SkinnedVS return value>.PosH.w; 
                 //   x0 <- weights
                 //
-                #line 87 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 87 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov x0[0].x, v4.x
                 mov x0[1].x, v4.y
                 mov x0[2].x, v4.z
@@ -512,7 +512,7 @@ fxgroup
                 //   o0.x <- <SkinnedVS return value>.PosH.x; o0.y <- <SkinnedVS return value>.PosH.y; o0.z <- <SkinnedVS return value>.PosH.z; o0.w <- <SkinnedVS return value>.PosH.w; 
                 //   x0 <- weights
                 //
-                #line 87 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 87 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov x0[0].x, v4.x
                 mov x0[1].x, v4.y
                 mov x0[2].x, v4.z
@@ -607,7 +607,7 @@ fxgroup
                 //   v0.x <- pin.PosH.x; v0.y <- pin.PosH.y; v0.z <- pin.PosH.z; v0.w <- pin.PosH.w; 
                 //   v1.x <- pin.Tex.x; v1.y <- pin.Tex.y
                 //
-                #line 240 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 240 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 sample_indexable(texture2d)(float,float,float,float) r0.x, v1.xyxx, t0.wxyz, s0
                 mov r0.x, r0.x  // r0.x <- diffuse.w
                 
@@ -708,7 +708,7 @@ fxgroup
                 //   o1.x <- <TessVS return value>.NormalW.x; o1.y <- <TessVS return value>.NormalW.y; o1.z <- <TessVS return value>.NormalW.z; 
                 //   o0.x <- <TessVS return value>.PosW.x; o0.y <- <TessVS return value>.PosW.y; o0.z <- <TessVS return value>.PosW.z
                 //
-                #line 121 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 121 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov r0.xyz, v0.xyzx
                 mov r0.w, l(1.000000)
                 dp4 r1.x, r0.xyzw, cb1[0].xyzw  // r1.x <- vout.PosW.x
@@ -824,7 +824,7 @@ fxgroup
                 //   v[2][1].x <- p[2].NormalW.x; v[2][1].y <- p[2].NormalW.y; v[2][1].z <- p[2].NormalW.z; 
                 //   v[2][2].x <- p[2].Tex.x; v[2][2].y <- p[2].Tex.y; v[2][2].z <- p[2].TessFactor
                 //
-                #line 182 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 182 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov r0.x, vOutputControlPointID
                 mov r0.yzw, v[r0.x + 0][0].xxyz  // r0.y <- hout.PosW.x; r0.z <- hout.PosW.y; r0.w <- hout.PosW.z
                 mov r1.xyz, v[r0.x + 0][1].xyzx  // r1.x <- hout.NormalW.x; r1.y <- hout.NormalW.y; r1.z <- hout.NormalW.z
@@ -969,7 +969,7 @@ fxgroup
                 //   vicp[2][1].x <- tri[2].NormalW.x; vicp[2][1].y <- tri[2].NormalW.y; vicp[2][1].z <- tri[2].NormalW.z; 
                 //   vicp[2][2].x <- tri[2].Tex.x; vicp[2][2].y <- tri[2].Tex.y
                 //
-                #line 207 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 207 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mul r0.xyz, vDomain.xxxx, vicp[0][0].xyzx
                 mul r1.xyz, vDomain.yyyy, vicp[1][0].xyzx
                 add r0.xyz, r0.xyzx, r1.xyzx
@@ -1118,7 +1118,7 @@ fxgroup
                 //   o1.x <- <TessVS return value>.NormalW.x; o1.y <- <TessVS return value>.NormalW.y; o1.z <- <TessVS return value>.NormalW.z; 
                 //   o0.x <- <TessVS return value>.PosW.x; o0.y <- <TessVS return value>.PosW.y; o0.z <- <TessVS return value>.PosW.z
                 //
-                #line 121 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 121 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov r0.xyz, v0.xyzx
                 mov r0.w, l(1.000000)
                 dp4 r1.x, r0.xyzw, cb1[0].xyzw  // r1.x <- vout.PosW.x
@@ -1234,7 +1234,7 @@ fxgroup
                 //   v[2][1].x <- p[2].NormalW.x; v[2][1].y <- p[2].NormalW.y; v[2][1].z <- p[2].NormalW.z; 
                 //   v[2][2].x <- p[2].Tex.x; v[2][2].y <- p[2].Tex.y; v[2][2].z <- p[2].TessFactor
                 //
-                #line 182 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 182 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mov r0.x, vOutputControlPointID
                 mov r0.yzw, v[r0.x + 0][0].xxyz  // r0.y <- hout.PosW.x; r0.z <- hout.PosW.y; r0.w <- hout.PosW.z
                 mov r1.xyz, v[r0.x + 0][1].xyzx  // r1.x <- hout.NormalW.x; r1.y <- hout.NormalW.y; r1.z <- hout.NormalW.z
@@ -1379,7 +1379,7 @@ fxgroup
                 //   vicp[2][1].x <- tri[2].NormalW.x; vicp[2][1].y <- tri[2].NormalW.y; vicp[2][1].z <- tri[2].NormalW.z; 
                 //   vicp[2][2].x <- tri[2].Tex.x; vicp[2][2].y <- tri[2].Tex.y
                 //
-                #line 207 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 207 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 mul r0.xyz, vDomain.xxxx, vicp[0][0].xyzx
                 mul r1.xyz, vDomain.yyyy, vicp[1][0].xyzx
                 add r0.xyz, r0.xyzx, r1.xyzx
@@ -1481,7 +1481,7 @@ fxgroup
                 //   v2.x <- pin.NormalW.x; v2.y <- pin.NormalW.y; v2.z <- pin.NormalW.z; 
                 //   v3.x <- pin.Tex.x; v3.y <- pin.Tex.y
                 //
-                #line 251 "S:\Projects\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
+                #line 251 "C:\Files\Programming\DirectX\LunaW8\Chapter 25 Character Animation\SkinnedMesh\FX\BuildShadowMap.fx"
                 sample_indexable(texture2d)(float,float,float,float) r0.x, v3.xyxx, t0.wxyz, s0
                 mov r0.x, r0.x  // r0.x <- diffuse.w
                 
