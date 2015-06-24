@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Effects11", "Effects11\Effects11_2013.vcxproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
@@ -68,6 +68,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 02 XMMATRIX", "Chapter 2 Matrix Algebra\XMMATRIX\XMMATRIX.vcxproj", "{39F307B8-5EA9-4DA2-A01C-BE7BCFB7D6C4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 01 XMVECTOR", "Chapter 1 Vector Algebra\XMVECTOR\XMVECTOR.vcxproj", "{DADB6887-AAD1-48B8-BE2D-94D2C36681E9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 04 Init Direct3D", "Chapter 4 Direct3D Initialization\Init Direct3D\Init Direct3D.vcxproj", "{FB063B3D-D339-46EA-818F-BC952CF14850}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -379,6 +381,15 @@ Global
 		{DADB6887-AAD1-48B8-BE2D-94D2C36681E9}.Release|Win32.ActiveCfg = Release|Win32
 		{DADB6887-AAD1-48B8-BE2D-94D2C36681E9}.Release|Win32.Build.0 = Release|Win32
 		{DADB6887-AAD1-48B8-BE2D-94D2C36681E9}.Release|x64.ActiveCfg = Release|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Debug|Win32.Build.0 = Debug|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Debug|x64.ActiveCfg = Debug|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Profile|Win32.ActiveCfg = Release|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Profile|Win32.Build.0 = Release|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Profile|x64.ActiveCfg = Release|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Release|Win32.ActiveCfg = Release|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Release|Win32.Build.0 = Release|Win32
+		{FB063B3D-D339-46EA-818F-BC952CF14850}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
