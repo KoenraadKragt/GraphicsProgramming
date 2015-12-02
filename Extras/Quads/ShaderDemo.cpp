@@ -16,7 +16,6 @@
 struct Vertex
 {
 	XMFLOAT3 Pos;
-	XMFLOAT4 Color;
 };
 
 class ShaderDemoApp : public D3DApp
@@ -194,13 +193,13 @@ void ShaderDemoApp::BuildGeometryBuffers()
 	// Create vertex buffer
     Vertex vertices[] =
     {
-		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), (const float*)&Colors::White   },
-		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), (const float*)&Colors::Black   },
-		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), (const float*)&Colors::Red     },
+		{ XMFLOAT3(-1.0f, -1.0f, -1.0f)},
+		{ XMFLOAT3(-1.0f, +1.0f, -1.0f)},
+		{ XMFLOAT3(+1.0f, +1.0f, -1.0f)},
 
-		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), (const float*)&Colors::Red },
-		{ XMFLOAT3(+1.0f, -1.0f, -1.0f), (const float*)&Colors::Black },
-		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), (const float*)&Colors::White },
+		{ XMFLOAT3(+1.0f, +1.0f, -1.0f)},
+		{ XMFLOAT3(+1.0f, -1.0f, -1.0f)},
+		{ XMFLOAT3(-1.0f, -1.0f, -1.0f)},
     };
 
     D3D11_BUFFER_DESC vbd;
@@ -257,8 +256,6 @@ void ShaderDemoApp::BuildVertexLayout()
 	D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 	{
 		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0}
-//		,
-//		{"COLOR",    0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
 	// Create the input layout
