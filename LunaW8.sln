@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Effects11", "Effects11\Effects11_2013.vcxproj", "{DF460EAB-570D-4B50-9089-2E2FC801BF38}"
 EndProject
@@ -70,6 +70,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 01 XMVECTOR", "Chapter 1 Vector Algebra\XMVECTOR\XMVECTOR.vcxproj", "{DADB6887-AAD1-48B8-BE2D-94D2C36681E9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter 04 Init Direct3D", "Chapter 4 Direct3D Initialization\Init Direct3D\Init Direct3D.vcxproj", "{FB063B3D-D339-46EA-818F-BC952CF14850}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Extras Quads", "Extras\Quads\Quads.vcxproj", "{402BD97F-CD6B-4D15-B488-213FE456E3ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -390,6 +392,16 @@ Global
 		{FB063B3D-D339-46EA-818F-BC952CF14850}.Release|Win32.ActiveCfg = Release|Win32
 		{FB063B3D-D339-46EA-818F-BC952CF14850}.Release|Win32.Build.0 = Release|Win32
 		{FB063B3D-D339-46EA-818F-BC952CF14850}.Release|x64.ActiveCfg = Release|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Debug|Win32.Build.0 = Debug|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Debug|x64.ActiveCfg = Debug|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Profile|Win32.ActiveCfg = Release|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Profile|Win32.Build.0 = Release|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Profile|x64.ActiveCfg = Release|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Profile|x64.Build.0 = Release|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Release|Win32.ActiveCfg = Release|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Release|Win32.Build.0 = Release|Win32
+		{402BD97F-CD6B-4D15-B488-213FE456E3ED}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
