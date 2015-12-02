@@ -41,7 +41,6 @@ private:
 
 private:
 	ID3D11Buffer* mBoxVB;
-	ID3D11Buffer* mBoxIB;
 
 	ID3DX11Effect* mFX;
 	ID3DX11EffectTechnique* mTech;
@@ -52,10 +51,6 @@ private:
 	XMFLOAT4X4 mWorld;
 	XMFLOAT4X4 mView;
 	XMFLOAT4X4 mProj;
-
-	float mTheta;
-	float mPhi;
-	float mRadius;
 
 	POINT mLastMousePos;
 };
@@ -78,9 +73,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
  
 
 ShaderDemoApp::ShaderDemoApp(HINSTANCE hInstance)
-: D3DApp(hInstance), mBoxVB(0), mBoxIB(0), mFX(0), mTech(0),
-  mfxWorldViewProj(0), mInputLayout(0), 
-  mTheta(1.5f*MathHelper::Pi), mPhi(0.25f*MathHelper::Pi), mRadius(5.0f)
+: D3DApp(hInstance), mBoxVB(0), mFX(0), mTech(0),
+  mfxWorldViewProj(0), mInputLayout(0)
 {
 	mMainWndCaption = L"Box Demo";
 	
@@ -96,7 +90,6 @@ ShaderDemoApp::ShaderDemoApp(HINSTANCE hInstance)
 ShaderDemoApp::~ShaderDemoApp()
 {
 	ReleaseCOM(mBoxVB);
-	ReleaseCOM(mBoxIB);
 	ReleaseCOM(mFX);
 	ReleaseCOM(mInputLayout);
 }
@@ -124,13 +117,8 @@ void ShaderDemoApp::OnResize()
 
 void ShaderDemoApp::UpdateScene(float dt)
 {
-	// Convert Spherical to Cartesian coordinates.
-	float x = mRadius*sinf(mPhi)*cosf(mTheta);
-	float z = mRadius*sinf(mPhi)*sinf(mTheta);
-	float y = mRadius*cosf(mPhi);
-
 	// Build the view matrix.
-	XMVECTOR pos    = XMVectorSet(x, y, z, 1.0f);
+	XMVECTOR pos = XMVectorSet(0.0f, 0.0f, -4.0f, 1.0f);
 	XMVECTOR target = XMVectorZero();
 	XMVECTOR up     = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
 
@@ -149,7 +137,6 @@ void ShaderDemoApp::DrawScene()
 	UINT stride = sizeof(Vertex);
     UINT offset = 0;
     md3dImmediateContext->IASetVertexBuffers(0, 1, &mBoxVB, &stride, &offset);
-	md3dImmediateContext->IASetIndexBuffer(mBoxIB, DXGI_FORMAT_R32_UINT, 0);
 
 	// Set constants
 	XMMATRIX world = XMLoadFloat4x4(&mWorld);
@@ -164,9 +151,7 @@ void ShaderDemoApp::DrawScene()
     for(UINT p = 0; p < techDesc.Passes; ++p)
     {
         mTech->GetPassByIndex(p)->Apply(0, md3dImmediateContext);
-        
-		// 36 indices for the box.
-		md3dImmediateContext->DrawIndexed(36, 0, 0);
+		md3dImmediateContext->Draw(6, 0);
     }
 
 	HR(mSwapChain->Present(0, 0));
@@ -192,25 +177,12 @@ void ShaderDemoApp::OnMouseMove(WPARAM btnState, int x, int y)
 		// Make each pixel correspond to a quarter of a degree.
 		float dx = XMConvertToRadians(0.25f*static_cast<float>(x - mLastMousePos.x));
 		float dy = XMConvertToRadians(0.25f*static_cast<float>(y - mLastMousePos.y));
-
-		// Update angles based on input to orbit camera around box.
-		mTheta += dx;
-		mPhi   += dy;
-
-		// Restrict the angle mPhi.
-		mPhi = MathHelper::Clamp(mPhi, 0.1f, MathHelper::Pi-0.1f);
 	}
 	else if( (btnState & MK_RBUTTON) != 0 )
 	{
 		// Make each pixel correspond to 0.005 unit in the scene.
 		float dx = 0.005f*static_cast<float>(x - mLastMousePos.x);
 		float dy = 0.005f*static_cast<float>(y - mLastMousePos.y);
-
-		// Update the camera radius based on input.
-		mRadius += dx - dy;
-
-		// Restrict the radius.
-		mRadius = MathHelper::Clamp(mRadius, 3.0f, 15.0f);
 	}
 
 	mLastMousePos.x = x;
@@ -225,11 +197,10 @@ void ShaderDemoApp::BuildGeometryBuffers()
 		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), (const float*)&Colors::White   },
 		{ XMFLOAT3(-1.0f, +1.0f, -1.0f), (const float*)&Colors::Black   },
 		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), (const float*)&Colors::Red     },
-		{ XMFLOAT3(+1.0f, -1.0f, -1.0f), (const float*)&Colors::Green   },
-		{ XMFLOAT3(-1.0f, -1.0f, +1.0f), (const float*)&Colors::Blue    },
-		{ XMFLOAT3(-1.0f, +1.0f, +1.0f), (const float*)&Colors::Yellow  },
-		{ XMFLOAT3(+1.0f, +1.0f, +1.0f), (const float*)&Colors::Cyan    },
-		{ XMFLOAT3(+1.0f, -1.0f, +1.0f), (const float*)&Colors::Magenta }
+
+		{ XMFLOAT3(+1.0f, +1.0f, -1.0f), (const float*)&Colors::Red },
+		{ XMFLOAT3(+1.0f, -1.0f, -1.0f), (const float*)&Colors::Black },
+		{ XMFLOAT3(-1.0f, -1.0f, -1.0f), (const float*)&Colors::White },
     };
 
     D3D11_BUFFER_DESC vbd;
@@ -242,46 +213,6 @@ void ShaderDemoApp::BuildGeometryBuffers()
     D3D11_SUBRESOURCE_DATA vinitData;
     vinitData.pSysMem = vertices;
     HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &mBoxVB));
-
-
-	// Create the index buffer
-
-	UINT indices[] = {
-		// front face
-		0, 1, 2,
-		0, 2, 3,
-
-		// back face
-		4, 6, 5,
-		4, 7, 6,
-
-		// left face
-		4, 5, 1,
-		4, 1, 0,
-
-		// right face
-		3, 2, 6,
-		3, 6, 7,
-
-		// top face
-		1, 5, 6,
-		1, 6, 2,
-
-		// bottom face
-		4, 0, 3, 
-		4, 3, 7
-	};
-
-	D3D11_BUFFER_DESC ibd;
-    ibd.Usage = D3D11_USAGE_IMMUTABLE;
-    ibd.ByteWidth = sizeof(UINT) * 36;
-    ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    ibd.CPUAccessFlags = 0;
-    ibd.MiscFlags = 0;
-	ibd.StructureByteStride = 0;
-    D3D11_SUBRESOURCE_DATA iinitData;
-    iinitData.pSysMem = indices;
-    HR(md3dDevice->CreateBuffer(&ibd, &iinitData, &mBoxIB));
 }
  
 void ShaderDemoApp::BuildFX()
