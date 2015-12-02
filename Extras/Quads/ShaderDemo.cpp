@@ -39,17 +39,21 @@ private:
 	void BuildVertexLayout();
 
 private:
-	ID3D11Buffer* mBoxVB;
+	ID3D11Buffer* VertexBuffer;
 
 	ID3DX11Effect* mFX;
 	ID3DX11EffectTechnique* mTech;
 	ID3DX11EffectMatrixVariable* mfxWorldViewProj;
+	ID3DX11EffectVariable* mfxGlobalTime;
+	ID3DX11EffectVariable* mfxResolution;
 
 	ID3D11InputLayout* mInputLayout;
 
 	XMFLOAT4X4 mWorld;
 	XMFLOAT4X4 mView;
 	XMFLOAT4X4 mProj;
+	float mGlobalTime; 
+	XMFLOAT2 mResolution;
 
 	POINT mLastMousePos;
 };
@@ -72,10 +76,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
  
 
 ShaderDemoApp::ShaderDemoApp(HINSTANCE hInstance)
-: D3DApp(hInstance), mBoxVB(0), mFX(0), mTech(0),
+: D3DApp(hInstance), VertexBuffer(0), mFX(0), mTech(0),
   mfxWorldViewProj(0), mInputLayout(0)
 {
-	mMainWndCaption = L"Box Demo";
+	mMainWndCaption = L"Shader Demo";
 	
 	mLastMousePos.x = 0;
 	mLastMousePos.y = 0;
@@ -88,7 +92,7 @@ ShaderDemoApp::ShaderDemoApp(HINSTANCE hInstance)
 
 ShaderDemoApp::~ShaderDemoApp()
 {
-	ReleaseCOM(mBoxVB);
+	ReleaseCOM(VertexBuffer);
 	ReleaseCOM(mFX);
 	ReleaseCOM(mInputLayout);
 }
@@ -123,6 +127,10 @@ void ShaderDemoApp::UpdateScene(float dt)
 
 	XMMATRIX V = XMMatrixLookAtLH(pos, target, up);
 	XMStoreFloat4x4(&mView, V);
+
+	mGlobalTime = mTimer.TotalTime();
+	mResolution.x = 800;
+	mResolution.y = 600;
 }
 
 void ShaderDemoApp::DrawScene()
@@ -135,7 +143,7 @@ void ShaderDemoApp::DrawScene()
 
 	UINT stride = sizeof(Vertex);
     UINT offset = 0;
-    md3dImmediateContext->IASetVertexBuffers(0, 1, &mBoxVB, &stride, &offset);
+    md3dImmediateContext->IASetVertexBuffers(0, 1, &VertexBuffer, &stride, &offset);
 
 	// Set constants
 	XMMATRIX world = XMLoadFloat4x4(&mWorld);
@@ -144,6 +152,8 @@ void ShaderDemoApp::DrawScene()
 	XMMATRIX worldViewProj = world*view*proj;
 
 	mfxWorldViewProj->SetMatrix(reinterpret_cast<float*>(&worldViewProj));
+	mfxGlobalTime->SetRawValue(&mGlobalTime, 0, sizeof(mGlobalTime));
+	mfxResolution->SetRawValue(&mResolution, 0, sizeof(mResolution));
 
     D3DX11_TECHNIQUE_DESC techDesc;
     mTech->GetDesc( &techDesc );
@@ -211,7 +221,7 @@ void ShaderDemoApp::BuildGeometryBuffers()
 	vbd.StructureByteStride = 0;
     D3D11_SUBRESOURCE_DATA vinitData;
     vinitData.pSysMem = vertices;
-    HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &mBoxVB));
+    HR(md3dDevice->CreateBuffer(&vbd, &vinitData, &VertexBuffer));
 }
  
 void ShaderDemoApp::BuildFX()
@@ -248,6 +258,8 @@ void ShaderDemoApp::BuildFX()
 
 	mTech    = mFX->GetTechniqueByName("ColorTech");
 	mfxWorldViewProj = mFX->GetVariableByName("gWorldViewProj")->AsMatrix();
+	mfxGlobalTime = mFX->GetVariableByName("gGlobalTime");
+	mfxResolution = mFX->GetVariableByName("gResolution");
 }
 
 void ShaderDemoApp::BuildVertexLayout()
